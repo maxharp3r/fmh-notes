@@ -1,9 +1,10 @@
 clean:
 	rm -rf notebooks/_build
+	rm notebooks/conf.py
 
-dev: clean
+dev:
 	jupyter-book config sphinx notebooks
-	sphinx-autobuild notebooks _build/html -b html
+	sphinx-autobuild notebooks notebooks/_build/html -b html
 
-build:
+build: clean
 	jupyter-book build notebooks
