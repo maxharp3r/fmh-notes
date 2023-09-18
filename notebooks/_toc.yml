@@ -4,11 +4,10 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
+- file: dev/python
+- file: recsys/recsys-notes.md
   sections:
-  - file: mymarkdownfile
-- file: notebooks
-- file: markdown-notebooks
+  - file: recsys/try-recbole
 - file: misc/index
   sections:
   - file: misc/jupyter-book
