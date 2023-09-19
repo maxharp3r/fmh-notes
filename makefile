@@ -1,10 +1,12 @@
+basedir = docs
+
 clean:
-	rm -rf notebooks/_build
-	rm notebooks/conf.py
+	rm -rf $(basedir)/_build
+	rm $(basedir)/conf.py
 
 dev:
-	jupyter-book config sphinx notebooks
-	sphinx-autobuild notebooks notebooks/_build/html -b html
+	jupyter-book config sphinx $(basedir)
+	sphinx-autobuild $(basedir) $(basedir)/_build/html -b html
 
 build: clean
-	jupyter-book build notebooks
+	jupyter-book build $(basedir)
