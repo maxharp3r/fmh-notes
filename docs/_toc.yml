@@ -5,7 +5,8 @@ format: jb-book
 root: intro
 chapters:
 - file: dev/python
-- file: recsys/recsys-notes.md
+- file: ml/index
+- file: recsys/recsys-notes
   sections:
   - file: recsys/try-recbole
 - file: misc/index

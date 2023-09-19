@@ -1,6 +1,11 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
+# Book theme settings:
+# https://sphinx-book-theme.readthedocs.io/en/stable/
+# and
+# https://pydata-sphinx-theme.readthedocs.io/en/latest/user_guide/index.html
+
 title: Max's Notes
 author: Max
 # logo: logo.png
@@ -34,6 +39,9 @@ html:
 
 # html_static_path: ["_static"]
 # html_css_files: ["custom.css"]
+
+html_context:
+   default_mode: "light"
 
 # sphinx:
 #   config:

@@ -1,5 +1,9 @@
 # RecSys Notes
 
+links:
+
+* <http://d2l.ai/chapter_recommender-systems/index.html>
+
 ## BPR
 
 Summary:
