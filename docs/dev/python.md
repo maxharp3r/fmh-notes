@@ -1,5 +1,25 @@
 # python
 
+## installing pyenv + conda
+
+The most flexible python setup is to have both `pyenv` and `conda` installed.
+
+* don't use pyenv to install/manage conda, install them separately (using brew)
+* a new login shell:
+    * should not have any environment activated
+    * should have both the `pyenv` and `conda` commands available
+    * should use the pyenv default python (no virtualenv) by default
+
+`brew install miniconda pyenv pyenv-virtualenv xz readline`
+
+Follow instructions to configure them for the current shell.
+
+If using oh-my-zsh, move conda config from `~/.zshrc` to a new file `~.oh-my-zsh/custom/conda.zsh`
+
+refs:
+
+* <https://stackoverflow.com/a/58045893/293087>
+
 ## using pyenv
 
 ```bash
@@ -7,6 +27,16 @@ pyenv versions
 
 pyenv which python
 pyenv shell 3.11
+
+pyenv install 3.11
+```
+
+## using conda
+
+```sh
+conda env list
+conda activate my-env
+conda deactivate
 ```
 
 ## using poetry
@@ -25,24 +55,6 @@ full spec: <https://python-poetry.org/docs/dependency-specification/>
 * `^1.2.3` => `>=1.2.3 <2.0.0`
 * `~1.2.3` => `>=1.2.3 <1.3.0`
 * `1.2.*`  => `>=1.2.0 <1.3.0`
-
-## installing pyenv + conda
-
-The most flexible python setup is to have both `pyenv` and `conda` installed.
-
-* don't use pyenv to install/manage conda, install them separately (using brew)
-* a new login shell:
-    * should not have any environment activated
-    * should have both the `pyenv` and `conda` commands available
-    * should use the pyenv default python (no virtualenv) by default
-
-`brew install miniconda pyenv pyenv-virtualenv`
-
-Follow instructions to configure them for the current shell.
-
-refs:
-
-* <https://stackoverflow.com/a/58045893/293087>
 
 ## installing python + tkinter via pyenv
 
