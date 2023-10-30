@@ -1,6 +1,4 @@
-# Apps
-
-## Gmail
+# Gmail
 
 Settings:
 
@@ -9,6 +7,7 @@ Settings:
 * general
     * undo send 20 seconds
     * keyboard shortcuts on
+    * (maybe) create a signature
 * labels
     * hide: snoozed
     * add this label:

@@ -14,7 +14,7 @@ core apps
 
   ```sh
   # standard
-  brew install keepingyouawake iterm2 stats rectangle
+  brew install keepingyouawake iterm2 stats rectangle glances
   brew install --cask macvim
 
   # maybe
@@ -34,6 +34,12 @@ configure git
   ```
 
 note: getting completions to work in oh my zsh: <https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh>
+
+## Next Steps Setup
+
+* `gmail.md`
+* chrome
+    * adblock
 
 ## Google Meet as standalone app
 

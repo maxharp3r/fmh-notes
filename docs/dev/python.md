@@ -20,6 +20,37 @@ refs:
 
 * <https://stackoverflow.com/a/58045893/293087>
 
+### notes about pyenv-virtualenv
+
+There is extra work getting pyenv-virtualenv to run (a) in zsh, and (b) in vs-code.
+
+In vscode, add this to `settings.json`:
+
+```json
+"python.terminal.activateEnvironment": false
+```
+
+edit `.zsh` or `~/.oh-my-zsh/custom/pyenv.zsh`:
+
+```sh
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+plugin=(
+  pyenv
+)
+
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+
+To verify that pyenv-virtualenv works:
+
+* activate a virtual environment, e.g., `pyenv activate 3.11.6/envs/fmh-sandbox-data`
+* verify that `pip --version` shows the path to the environment (not the base environment)
+* may have to restart vscode for settings to apply correctly
+
 ## using pyenv
 
 ```bash
