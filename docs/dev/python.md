@@ -66,8 +66,23 @@ pyenv install 3.11
 
 ```sh
 conda env list
-conda activate my-env
+
+conda activate ENV_NAME
 conda deactivate
+
+conda env create -f env.yml
+conda env update -f env.yml --prune
+conda remove --name ENV_NAME --all
+```
+
+### conda is slow
+
+Try the libmamba solver (via <https://stackoverflow.com/a/77090748/293087>):
+
+```sh
+conda update -n base conda
+conda install -n base conda-libmamba-solver
+conda config --set solver libmamba
 ```
 
 ## using poetry
@@ -86,6 +101,14 @@ full spec: <https://python-poetry.org/docs/dependency-specification/>
 * `^1.2.3` => `>=1.2.3 <2.0.0`
 * `~1.2.3` => `>=1.2.3 <1.3.0`
 * `1.2.*`  => `>=1.2.0 <1.3.0`
+
+## finding package dependencies
+
+What packages does a pypi package depend on?
+
+Click on the libraries.io link, e.g.: <https://libraries.io/pypi/inference-schema>
+
+Or, use `pipdeptree` -- <https://stackoverflow.com/a/45561645/293087>
 
 ## installing python + tkinter via pyenv
 

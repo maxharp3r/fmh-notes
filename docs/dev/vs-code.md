@@ -14,14 +14,15 @@
 * markdownlint
     * vs code settings => edit settings.json
 
-    ```json
-    "markdownlint.config": {
-        "MD007": {
-            "indent": 4
+        ```json
+        "markdownlint.config": {
+            "MD007": {
+                "indent": 4
+            }
         }
-    }
-    ```
+        ```
 
+* gitlens
 * vscode-pdf
 
 ## zen mode
