@@ -17,6 +17,9 @@ core apps
   brew install keepingyouawake iterm2 stats rectangle glances
   brew install --cask macvim
 
+  # dev
+  brew install glances tlrc
+
   # maybe
   brew install dropbox google-chrome
   ```

@@ -102,6 +102,33 @@ full spec: <https://python-poetry.org/docs/dependency-specification/>
 * `~1.2.3` => `>=1.2.3 <1.3.0`
 * `1.2.*`  => `>=1.2.0 <1.3.0`
 
+## creating a virtualenv manually
+
+```bash
+python3 -m venv ./env
+source ./env/bin/activate
+deactivate
+
+# if you need the jupyter kernel, activate the env, then:
+source ./env/bin/activate
+pip install jupyter
+ipython kernel install --name "local-venv" --user
+
+## list jupyter kernels
+jupyter kernelspec list
+```
+
+## install requirements.txt
+
+```bash
+pip install -r requirements.txt
+
+# upgrade
+pip install --upgrade --force-reinstall -r requirements.txt
+# or
+pip install --ignore-installed -r requirements.txt
+```
+
 ## finding package dependencies
 
 What packages does a pypi package depend on?

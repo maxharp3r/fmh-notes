@@ -19,6 +19,8 @@ see <https://learn.microsoft.com/en-us/azure/machine-learning/tutorial-cloud-wor
     * `conda activate ENV_NAME`
     * `python -m ipykernel install --user --name ENV_NAME --display-name "ENV NAME"`
 
+also see <https://queirozf.com/entries/jupyter-kernels-how-to-add-change-remove>
+
 ## Using Git
 
 <https://learn.microsoft.com/en-us/azure/machine-learning/concept-train-model-git-integration>
