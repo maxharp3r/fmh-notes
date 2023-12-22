@@ -62,6 +62,28 @@ pyenv shell 3.11
 pyenv install 3.11
 ```
 
+## using pip
+
+```sh
+pip install -r requirements.txt
+
+pip install --upgrade --force-reinstall -r requirements.txt
+```
+
+### Specifying versions (pip)
+
+details:
+
+* <https://pip.pypa.io/en/stable/reference/requirement-specifiers/>
+* <https://packaging.python.org/en/latest/specifications/version-specifiers/#id4>
+
+```txt
+SomeProject
+SomeProject == 1.3
+SomeProject >= 1.2, < 2.0
+SomeProject[foo, bar]
+```
+
 ## using conda
 
 ```sh
@@ -73,6 +95,19 @@ conda deactivate
 conda env create -f env.yml
 conda env update -f env.yml --prune
 conda remove --name ENV_NAME --all
+```
+
+### Specifying versions (conda)
+
+full spec: <https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf>
+
+```txt
+Constraint type            Specification           Result
+Fuzzy                      numpy=1.11              1.11.0, 1.11.1, 1.11.2, 1.11.18 etc.
+Exact                      numpy==1.11             1.11.0
+Greater than or equal to   "numpy>=1.11"           1.11.0 or higher
+OR                         "numpy=1.11.1|1.11.3"   1.11.1, 1.11.3
+AND                        "numpy>=1.8,<2"         1.8, 1.9, not 2.0
 ```
 
 ### conda is slow
@@ -92,9 +127,12 @@ poetry install
 
 poetry shell
 deactivate
+
+# list environments in this project
+poetry env list
 ```
 
-### Specifying versions
+### Specifying versions (poetry)
 
 full spec: <https://python-poetry.org/docs/dependency-specification/>
 
