@@ -4,7 +4,9 @@
 
 keyboard/touchpad
 
-* open keyboard, change delay and repeat
+* settings > keyboard
+    * change delay and repeat
+    * turn off emoji shortcut key: set "Press 🌐 key" to "Do Nothing"
 
 core apps
 

@@ -10,3 +10,6 @@ Settings => search engine => site search => add
 * google scholar
     * gs
     * <https://scholar.google.com/scholar?hl=en&q=%s>
+* libraries.io (python dependency lookup)
+    * lib
+    * <https://libraries.io/pypi/%s>

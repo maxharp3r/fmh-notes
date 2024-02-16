@@ -99,7 +99,7 @@ conda remove --name ENV_NAME --all
 
 ### Specifying versions (conda)
 
-full spec: <https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf>
+full spec: <https://docs.conda.io/projects/conda-build/en/stable/resources/package-spec.html#package-match-specifications>
 
 ```txt
 Constraint type            Specification           Result
@@ -109,6 +109,10 @@ Greater than or equal to   "numpy>=1.11"           1.11.0 or higher
 OR                         "numpy=1.11.1|1.11.3"   1.11.1, 1.11.3
 AND                        "numpy>=1.8,<2"         1.8, 1.9, not 2.0
 ```
+
+### create empty conda env
+
+`conda create --name py38 python=3.8`
 
 ### conda is slow
 
@@ -131,6 +135,12 @@ deactivate
 # list environments in this project
 poetry env list
 ```
+
+### installing with a specific version of python
+
+<https://python-poetry.org/docs/managing-environments/>
+
+`poetry env use /anaconda/envs/py38/bin/python`
 
 ### Specifying versions (poetry)
 
@@ -171,7 +181,7 @@ pip install --ignore-installed -r requirements.txt
 
 What packages does a pypi package depend on?
 
-Click on the libraries.io link, e.g.: <https://libraries.io/pypi/inference-schema>
+Click on the libraries.io link, e.g.: <https://libraries.io/pypi/>
 
 Or, use `pipdeptree` -- <https://stackoverflow.com/a/45561645/293087>
 
