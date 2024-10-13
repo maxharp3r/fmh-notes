@@ -2,7 +2,7 @@
 
 * clean
     * address missing
-    * check for outliers
+    * remove outliers
     * continuous => bins?
 * featurize
     * normalize continuous
@@ -15,18 +15,15 @@
 # read
 df = pd.read_csv("path/to/file", sep=",", index_col="foo")
 
-# indexes
-df.set_index("col", inplace=True)
-df.reset_index(inplace=True)
-
 # info
 df.info() # will also show columns with nulls
 df["col"].describe()  # for continuous
 df["col"].hist()
 df["col"].value_counts(dropna=False)  # for categorical
 
-# finding rows with NA
-df[df.isnull().any(axis=1)]
+# indexes
+df.set_index("col", inplace=True)
+df.reset_index(inplace=True)
 
 # selecting rows
 df.loc[0:2]  # by index; 3 results
@@ -37,6 +34,14 @@ df.loc[:, df.dtypes == np.float64]  # np.int64, "float", "object"
 df.loc[:, df.columns != "foo"]
 df.loc[:, ~df.columns.isin(["foo", "bar"])]
 df.drop(columns=["foo"], inplace=True)
+
+# finding/filling NA
+df[df.isnull().any(axis=1)]
+df["col"].fillna("missing", inplace=True)
+
+# Find outliers above the 99th percentile
+percentile_99 = df["col"].quantile(0.99)
+outliers = df[df["col"] > percentile_99]
 
 # binning
 df["age_cat"] = pd.cut(df["age"], bins=[0, 20, 100], labels=["0-20", "20+"], right=False) # vals outside of range become NaN
