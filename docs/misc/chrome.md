@@ -13,3 +13,7 @@ Settings => search engine => site search => add
 * libraries.io (python dependency lookup)
     * lib
     * <https://libraries.io/pypi/%s>
+
+## Extensions (only needed for new google accounts)
+
+* adblock
