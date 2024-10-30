@@ -2,10 +2,8 @@
 
 ## Initial Setup
 
-keyboard/touchpad
+### keyboard/touchpad
 
-* terminal
-    * turn on key repeat: `defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false`
 * settings > keyboard
     * change delay and repeat
     * turn off emoji shortcut key: set "Press 🌐 key" to "Do Nothing"
@@ -14,19 +12,10 @@ keyboard/touchpad
     * tracking speed: (faster)
     * click: light
     * tap to click: on
+* terminal
+    * turn on key repeat: `defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false`
 
-finder
-
-* finder > settings
-    * general: new finder windows show downloads
-    * sidebar: uncheck recents, airdrop
-* to ensure a directory always opens in list view
-    * navigate to folder (start with hard drive root to affect sub-dirs)
-    * cmd+j
-    * check "always open in list view"
-* close settings and drag to reorder left panel
-
-core apps
+### core apps
 
 * install oh my zsh
 * install brew
@@ -40,6 +29,11 @@ brew install --cask macvim
 # maybe
 brew install dropbox
 ```
+
+* configure stats
+    * cpu, gpu, ram
+    * all: include label and bar chart; select `merge widgets` and `frame`
+    * cpu: check `usage per core`
 
 ## Dev Setup
 
@@ -64,12 +58,27 @@ cat ~/.gitconfig
 
 ## Next Steps Setup
 
+### Finder Settings
+
+* finder > settings
+    * general: new finder windows show downloads
+    * sidebar: uncheck recents, airdrop
+* to ensure a directory always opens in list view
+    * navigate to folder (start with hard drive root to affect sub-dirs)
+    * cmd+j
+    * check "always open in list view"
+* close settings and drag to reorder left panel
+
+### Misc
+
 * `gmail.md` (only if new google account)
 * `chrome.md`
+* `zotero.md`
 * additional apps:
     * spotify
     * zoom
     * google meet -- <https://meet.google.com> at the top right of your browser, in the URL bar, click Install
+    * cryptomator (ensure `secure` directory on dropbox is available on machine)
 * printer
     * (just add the printer when it's online, don't install 3p software)
 
