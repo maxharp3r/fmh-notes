@@ -59,3 +59,62 @@ df.groupby("col")["foo"].value_counts()  # categorical
 df.groupby("col")["foo"].describe()  # numerical
 
 ```
+
+## Validated DataFrame
+
+```python
+class ValidatedDataFrame(pd.DataFrame):
+    """A DataFrame that validates against a Pydantic schema.
+
+    Useful so that we can pass around validated, typed dataframes, allowing us to leverage
+    python typing to check inputs/outputs rather than passing around vanilla dataframes.
+
+    example usage:
+    class ExampleSchema(BaseModel):
+        name: str
+        department: str
+        age: Optional[int] = None
+
+    class ExampleDataFrame(ValidatedDataFrame):
+        schema = ExampleSchema
+
+    data = {'name': ['Alice'], 'department': ['Engineering']}
+    my_df = ExampleDataFrame(pd.DataFrame(data))
+    """
+
+    schema: Type[BaseModel]
+
+    def __init__(self, df: pd.DataFrame):
+        """Wrap a dataframe.
+
+        # , underscores_to_spaces: bool = False
+
+        Args:
+            data (pd.DataFrame): the dataframe, will be validated during __init__
+        """
+        super().__init__(df)
+        self.validate(df)
+
+    def validate(self, data: pd.DataFrame):
+        """Validate the first row of the DataFrame against the Pydantic schema."""
+        if data.empty:
+            raise ValueError("DataFrame is empty.")
+
+        if not isinstance(data, pd.DataFrame):
+            raise ValueError("Input data must be a pandas DataFrame.")
+
+        row_dict = data.iloc[0].to_dict()
+
+        try:
+            self.schema(**row_dict)
+        except ValidationError as e:
+            errors = e.errors()
+            error_messages = []
+
+            for error in errors:
+                field_name = error["loc"][-1]
+                message = f"Field '{field_name}' error: {error['msg']}"
+                error_messages.append(message)
+
+            raise ValueError(f"DataFrame schema validation error: {', '.join(error_messages)}")
+```
